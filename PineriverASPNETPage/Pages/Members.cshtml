@@ -1,0 +1,44 @@
+﻿@page
+@model PineriverASPNETPage.Pages.MembersModel
+@{
+    ViewData["Title"] = "Members";
+    ViewData["PageDesc"] = "Steam Community Members";
+}
+
+@*<ul>
+
+    @foreach (var item in Model.Members.Members.SteamID64)
+    {
+        <li>
+            @item
+        </li>
+    }
+
+    </ul>*@
+
+    <br />
+
+<div class="container">
+    <div class="row user-table">
+        @foreach (var item in Model.SUJ.response.players)
+        {
+            <div class="col-sm-1 col-md-1 col-lg-2 col-xl-2 user-data">
+                @if (item.personastate == 0)
+                {
+                <a href="@item.profileurl" target="_blank">
+                    <img src="@item.avatarfull" class="MemberIMG" style="border-color: red;" />
+                </a>
+                }
+
+                else
+                {
+                <a href="@item.profileurl" target="_blank">
+                    <img src="@item.avatarfull" class="MemberIMG" style="border-color: green;" />
+                </a>
+                }
+
+                @item.personaname <br>
+            </div>
+        }
+    </div>
+</div>
