@@ -54,6 +54,7 @@ namespace PineriverASPNETPage.Pages
             {
                 var jsonData = httpClient.DownloadString(baseUrl);
                 SUJ = JsonConvert.DeserializeObject<SteamUserJson>(jsonData);
+                SUJ.response.players = SUJ.response.players.OrderBy(o => o.personaname).ToList();
             }
         }
     }
