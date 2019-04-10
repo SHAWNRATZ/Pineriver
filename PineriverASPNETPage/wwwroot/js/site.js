@@ -1,4 +1,8 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your Javascript code.
+﻿/* Open Menu */
+$(".open-close-btn").on('click touchstart', function (e) {
+    // prevent default anchor click 
+    e.preventDefault();
+    $(".overlay").toggleClass("overlay-open");
+    $("#hamburger-icon").toggleClass("hamburger-open");
+    $('body').toggleClass('stop-scrolling');
+});

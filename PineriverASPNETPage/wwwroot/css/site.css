@@ -1,5 +1,5 @@
 ﻿body {
-    background-color: #363636;
+    background-color: #131313;
     color: white;
 }
 
@@ -25,7 +25,9 @@
 .big-header {
     height: 100vh;
     width: 100%;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-image: url('https://skins.cash/blog/wp-content/uploads/2018/07/CS-GO-wallpaper-HD-CT.jpg');
+    background-blend-mode: multiply;
 }
 
 .big-header-content {
@@ -42,19 +44,32 @@
 }
 
 .small-header {
-    height: 300px;
+    height: 400px;
     width: 100%;
     background-color: black;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-image: url('https://skins.cash/blog/wp-content/uploads/2018/07/CS-GO-wallpaper-HD-CT.jpg');
+    background-blend-mode: multiply;
+    background-position: center;
 }
 
 .small-header-content {
     text-align: center;
     position: relative;
-    top: 100px;
+    top: 150px;
     color: white;
 }
 
 .small-header-content h5 {
     position: relative;
     top: -10px;
+}
+
+.custom-post-card {
+    background-color: #282828;
+}
+
+.card-container {
+    margin-top: 15px;
+    margin-bottom: 15px;
 }

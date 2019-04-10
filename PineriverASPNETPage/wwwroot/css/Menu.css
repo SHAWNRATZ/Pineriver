@@ -1,0 +1,151 @@
+﻿body {
+	margin: 0;
+	font-family: 'Lato', sans-serif;
+}
+
+.overlay {
+	height: 0%;
+	width: 100%;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 1);
+	overflow-y: hidden;
+	transition: 0.6s;
+}
+
+.overlay-open {
+	height: 100%;
+	width: 100%;
+}
+
+.overlay-content {
+	position: relative;
+	top: 25%;
+	width: 100%;
+	text-align: center;
+	margin-top: 30px;
+}
+
+.overlay a {
+	padding: 8px;
+	text-decoration: none;
+	font-size: 36px;
+	color: #fff;
+	text-transform: uppercase;
+	display: block;
+	transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+	color: #ccc;
+}
+
+.open-close-btn {
+	position: absolute;
+	top: 40px;
+	right: 40px;
+	text-decoration: none;
+	z-index: 10;
+}
+
+@media screen and (max-height: 450px) {
+	.overlay {
+		overflow-y: auto;
+	}
+	.overlay a {
+		font-size: 20px
+	}
+}
+
+
+/* Hamburger Icon */
+
+#hamburger-icon {
+	display: block;
+	width: 50px;
+	height: 39px;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: .5s ease-in-out;
+	-moz-transition: .5s ease-in-out;
+	-o-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
+	cursor: pointer;
+	transform: scale(0.7);
+}
+
+#hamburger-icon span {
+	display: block;
+	position: absolute;
+	height: 7px;
+	width: 100%;
+	background: #ffffff;
+	border-radius: 3px;
+	opacity: 1;
+	left: 0;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: .25s ease-in-out;
+	-moz-transition: .25s ease-in-out;
+	-o-transition: .25s ease-in-out;
+	transition: .25s ease-in-out;
+}
+
+
+/* Hamburger Lines  */
+
+#hamburger-icon span:nth-child(1) {
+	top: 0px;
+}
+
+#hamburger-icon span:nth-child(2),
+#hamburger-icon span:nth-child(3) {
+	top: 16px;
+}
+
+#hamburger-icon span:nth-child(4) {
+	top: 32px;
+}
+
+#hamburger-icon.hamburger-open span {
+	background: #fff
+}
+
+#hamburger-icon.hamburger-open span:nth-child(1) {
+	top: 18px;
+	width: 0%;
+	left: 50%;
+}
+
+#hamburger-icon.hamburger-open span:nth-child(2) {
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+#hamburger-icon.hamburger-open span:nth-child(3) {
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+#hamburger-icon.hamburger-open span:nth-child(4) {
+	top: 18px;
+	width: 0%;
+	left: 50%;
+}
+
+.stop-scrolling {
+	height: 100%;
+	overflow: hidden;
+}
