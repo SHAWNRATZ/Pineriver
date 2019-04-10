@@ -8,10 +8,16 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace PineriverASPNETPage.Pages.Admin
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class IndexModel : PageModel
     {
+        
         public void OnGet()
+        {
+
+        }
+
+        public void OnPost()
         {
 
         }

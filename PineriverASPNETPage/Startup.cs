@@ -35,6 +35,7 @@ namespace PineriverASPNETPage
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2).AddRazorPagesOptions(options =>
             {
                 options.AllowAreas = true;
+                
             });
         }
 
