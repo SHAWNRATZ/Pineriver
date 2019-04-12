@@ -12,5 +12,6 @@ namespace Services.PostService.DTO
         public string Message { get; set; }
         public int UpVotes { get; set; }
         public int DownVotes { get; set; }
+        public int ID { get; set; }
     }
 }

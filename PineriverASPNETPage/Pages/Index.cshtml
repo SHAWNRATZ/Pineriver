@@ -29,11 +29,17 @@
                             <div class="col-sm-6">
                                 <div class="row">
                                     <div class="col-sm-1">
-                                        <i class="fas fa-thumbs-up" title="@item.UpVotes"></i>
+                                        <form method="post">
+                                            <input type="text" hidden asp-for="UpID" value="@item.ID" />
+                                            <button class="btn btn-success" asp-page-handler="Up"><i class="fas fa-thumbs-up" title="@item.UpVotes"></i></button>
+                                        </form>
                                     </div>
 
                                     <div class="col-sm-1">
-                                        <i class="fas fa-thumbs-down" title="@item.DownVotes"></i>
+                                        <form method="post">
+                                            <input type="text" hidden asp-for="DownID" value="@item.ID" />
+                                            <button class="btn btn-success" asp-page-handler="Down"> <i class="fas fa-thumbs-down" title="@item.DownVotes"></i></button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>

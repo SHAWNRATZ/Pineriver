@@ -48,6 +48,7 @@ namespace Services.PostService
         public IQueryable<PostDTO> GetAll()
         {
             return (from t in _context.posts select new PostDTO {
+                ID = t.Post_ID,
                 User = t.User_ID,
                 Added = t.Post_Created,
                 DownVotes = t.Post_Downvotes,
@@ -64,7 +65,38 @@ namespace Services.PostService
 
         public OperationStatus Update(Post post)
         {
-            throw new NotImplementedException();
+            OperationStatus status = new OperationStatus
+            {
+                Operation = Operation.Update
+            };
+
+            try
+            {
+                foreach (var item in _context.posts)
+                {
+                    if (item.Post_ID == post.Post_ID)
+                    {
+                        item.Post_Message = post.Post_Message;
+                        item.Post_Subject = post.Post_Subject;
+                        item.Post_Upvotes = post.Post_Upvotes;
+                        item.Post_Downvotes = post.Post_Downvotes;
+                    }
+                }
+                _context.SaveChanges();
+                status.Status = Status.Success;
+            }
+            catch (Exception ex)
+            {
+                status.Status = Status.Failed;
+                status.ErrorMessage = "Could not update the selected item";
+            }
+
+            return status;
+        }
+
+        public Post Get(int id)
+        {
+            return _context.posts.Where(p => p.Post_ID == id).FirstOrDefault();
         }
     }
 }

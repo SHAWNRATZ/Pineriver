@@ -14,5 +14,6 @@ namespace Services.PostService
         OperationStatus Remove(int id);
         OperationStatus Update(Post post);
         IQueryable<PostDTO> GetAll();
+        Post Get(int id);
     }
 }
