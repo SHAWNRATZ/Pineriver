@@ -1,13 +1,3 @@
-Forside - Posts/Nyheder
-Servers - Serverlist
-Crew - Owners/Head-Admins/Admins
-Butik - Køb af moderator/VIP
-Regler - Regler for hver enkelt server
-Admin ansøgning
-Terms of service
-Bans - Link til sourcebans
-Rank - Link til ranks
-
 
 #### POSTS/NEWS
 ##### Allowing the staff to get in touch with the clients
