@@ -1,7 +1,7 @@
-﻿@using Microsoft.AspNetCore.Identity
+﻿@*@using Microsoft.AspNetCore.Identity
 @using PineriverASPNETPage.Areas.Identity.Data
 @inject SignInManager<AccountUser> SignInManager
-@inject UserManager<AccountUser> UserManager
+@inject UserManager<AccountUser> UserManager*@
 
 <div id="myNav" class="overlay">
     <div class="overlay-content">
@@ -12,19 +12,19 @@
 
 
 
-        @if (SignInManager.IsSignedIn(User))
-        {
+        @*@if (SignInManager.IsSignedIn(User))
+        {*@
             <a id="manage" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">YOUR PROFILE</a>
             <form id="logoutForm" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })">
                 <button id="logout" type="submit" class="btn btn-danger">Logout</button>
             </form>
-        }
+        @*}
 
         else
-        {
+        {*@
             <a id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
             <a id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
-        }
+        @*}*@
 
     </div>
 </div>
