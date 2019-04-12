@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="PostService\" />
+    <ProjectReference Include="..\PineriverData\PineriverData.csproj" />
   </ItemGroup>
 
 </Project>

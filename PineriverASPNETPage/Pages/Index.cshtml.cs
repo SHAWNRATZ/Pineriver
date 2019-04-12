@@ -5,101 +5,26 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using PineriverData.Entities;
+using Services.PostService;
+using Services.PostService.DTO;
 
 namespace PineriverASPNETPage.Pages
 {
     public class IndexModel : PageModel
     {
-        public List<Post> Posts { get; set; } = new List<Post>();
+
+        private IPostService _postServ { get; set; }
+
+        public IndexModel(IPostService postServ)
+        {
+            _postServ = postServ;
+        }
+
+        public IQueryable<PostDTO> Posts { get; set; }
 
         public void OnGet()
         {
-            Posts.Add(new Post {
-                Post_Created = DateTime.Now,
-                Post_Downvotes = 0,
-                Post_ID = 1,
-                Post_Message = "Tran er en lækker asiat",
-                Post_Subject = "BREAKING NEWS",
-                Post_Upvotes = 10000,
-                User_ID = "asd"
-            });
-
-            Posts.Add(new Post
-            {
-                Post_Created = DateTime.Now,
-                Post_Downvotes = 0,
-                Post_ID = 1,
-                Post_Message = "Tran er en lækker asiat",
-                Post_Subject = "BREAKING NEWS",
-                Post_Upvotes = 10000,
-                User_ID = "asd"
-            });
-
-            Posts.Add(new Post
-            {
-                Post_Created = DateTime.Now,
-                Post_Downvotes = 0,
-                Post_ID = 1,
-                Post_Message = "Tran er en lækker asiat",
-                Post_Subject = "BREAKING NEWS",
-                Post_Upvotes = 10000,
-                User_ID = "asd"
-            });
-
-            Posts.Add(new Post
-            {
-                Post_Created = DateTime.Now,
-                Post_Downvotes = 0,
-                Post_ID = 1,
-                Post_Message = "Tran er en lækker asiat",
-                Post_Subject = "BREAKING NEWS",
-                Post_Upvotes = 10000,
-                User_ID = "asd"
-            });
-
-            Posts.Add(new Post
-            {
-                Post_Created = DateTime.Now,
-                Post_Downvotes = 0,
-                Post_ID = 1,
-                Post_Message = "Tran er en lækker asiat",
-                Post_Subject = "BREAKING NEWS",
-                Post_Upvotes = 10000,
-                User_ID = "asd"
-            });
-
-            Posts.Add(new Post
-            {
-                Post_Created = DateTime.Now,
-                Post_Downvotes = 0,
-                Post_ID = 1,
-                Post_Message = "Tran er en lækker asiat",
-                Post_Subject = "BREAKING NEWS",
-                Post_Upvotes = 10000,
-                User_ID = "asd"
-            });
-
-            Posts.Add(new Post
-            {
-                Post_Created = DateTime.Now,
-                Post_Downvotes = 0,
-                Post_ID = 1,
-                Post_Message = "Tran er en lækker asiat",
-                Post_Subject = "BREAKING NEWS",
-                Post_Upvotes = 10000,
-                User_ID = "asd"
-            });
-
-            Posts.Add(new Post
-            {
-                Post_Created = DateTime.Now,
-                Post_Downvotes = 0,
-                Post_ID = 1,
-                Post_Message = "Tran er en lækker asiat",
-                Post_Subject = "BREAKING NEWS",
-                Post_Upvotes = 10000,
-                User_ID = "asd"
-            });
+            Posts = _postServ.GetAll();
         }
     }
 }

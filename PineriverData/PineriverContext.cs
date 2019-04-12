@@ -6,7 +6,7 @@ using System;
 
 namespace PineriverData
 {
-    class PineriverContext : DbContext
+    public class PineriverContext : DbContext
     {
 
         public DbSet<Post> posts { get; set; }

@@ -12,6 +12,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PineriverASPNETPage.Models;
+using PineriverData;
+using Services.PostService;
 
 namespace PineriverASPNETPage
 {
@@ -34,12 +36,11 @@ namespace PineriverASPNETPage
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddDbContext<PineriverDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("ConString")));
-
             services.AddIdentity<PineriverUser, IdentityRole>()
                 .AddEntityFrameworkStores<PineriverDbContext>()
                 .AddDefaultTokenProviders();
+            services.AddDbContext<PineriverContext>();
+            services.AddScoped<IPostService, PostService>();
 
             services.AddAuthentication().AddSteam();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2).AddRazorPagesOptions(options =>
