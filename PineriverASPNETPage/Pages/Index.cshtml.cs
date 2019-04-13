@@ -33,20 +33,20 @@ namespace PineriverASPNETPage.Pages
         }
 
 
-        public ActionResult OnPostUp(int UpID)
+        public void OnPostUp(int UpID)
         {
             Post post = _postServ.Get(UpID);
             post.Post_Upvotes++;
             _postServ.Update(post);
-            return RedirectToPage("/Index");
+            //return RedirectToPage("/Index");
         }
 
-        public ActionResult OnPostDown(int DownID)
+        public void OnPostDown(int DownID)
         {
             Post post = _postServ.Get(DownID);
             post.Post_Downvotes++;
             _postServ.Update(post);
-            return RedirectToPage("/Index");
+            //return RedirectToPage("/Index");
         }
     }
 }

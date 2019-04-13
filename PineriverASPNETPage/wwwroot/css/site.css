@@ -73,3 +73,17 @@
     margin-top: 15px;
     margin-bottom: 15px;
 }
+
+.thu-up:hover {
+    color: green;
+}
+
+.thu-down:hover {
+    color: red;
+}
+
+.likedis {
+    background-color: transparent;
+    border: none;
+    color: white;
+}

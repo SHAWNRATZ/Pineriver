@@ -1,5 +1,6 @@
 ﻿@page
 @model PineriverASPNETPage.Pages.IndexModel
+
 @{
     ViewData["Title"] = "Index";
     ViewData["PageDesc"] = "CS:GO GAMING COMMUNITY";
@@ -15,7 +16,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-6 text-left">
-                                <h5>@item.Subject</h5>
+                                <h5>@item.Subject.ToUpper()</h5>
                             </div>
 
                             <div class="col-sm-6 text-right">
@@ -29,16 +30,16 @@
                             <div class="col-sm-6">
                                 <div class="row">
                                     <div class="col-sm-1">
-                                        <form method="post">
+                                        <form method="post" data-ajax="true" data-ajax-method="post" data-ajax-complete="completed" asp-page-handler="Up">
                                             <input type="text" hidden asp-for="UpID" value="@item.ID" />
-                                            <button class="btn btn-success" asp-page-handler="Up"><i class="fas fa-thumbs-up" title="@item.UpVotes"></i></button>
+                                            <button class="likedis"><i class="fas fa-thumbs-up thu-up" title="@item.UpVotes"></i></button>
                                         </form>
                                     </div>
 
                                     <div class="col-sm-1">
-                                        <form method="post">
+                                        <form method="post" data-ajax="true" data-ajax-method="post" data-ajax-complete="completed" asp-page-handler="Down">
                                             <input type="text" hidden asp-for="DownID" value="@item.ID" />
-                                            <button class="btn btn-success" asp-page-handler="Down"> <i class="fas fa-thumbs-down" title="@item.DownVotes"></i></button>
+                                            <button class="likedis"> <i class="fas fa-thumbs-down thu-down" title="@item.DownVotes"></i></button>
                                         </form>
                                     </div>
                                 </div>
@@ -54,3 +55,10 @@
         }
     </div>
 </div>
+
+
+<script>
+    completed = () => {
+        alert('Posted using Unobtrusive AJAX');
+    };
+</script>
