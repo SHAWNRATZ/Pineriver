@@ -32,7 +32,7 @@ namespace Services.PostService
                 post.Post_Created = DateTime.Now;
                 post.Post_Downvotes = 0;
                 post.Post_Upvotes = 0;
-                _context.posts.Add(post);
+                _context.Posts.Add(post);
                 _context.SaveChanges();
                 status.Status = Status.Success;
             }
@@ -47,7 +47,7 @@ namespace Services.PostService
 
         public IQueryable<PostDTO> GetAll()
         {
-            return (from t in _context.posts select new PostDTO {
+            return (from t in _context.Posts select new PostDTO {
                 ID = t.Post_ID,
                 User = t.User_ID,
                 Added = t.Post_Created,
@@ -72,7 +72,7 @@ namespace Services.PostService
 
             try
             {
-                foreach (var item in _context.posts)
+                foreach (var item in _context.Posts)
                 {
                     if (item.Post_ID == post.Post_ID)
                     {
@@ -96,7 +96,7 @@ namespace Services.PostService
 
         public Post Get(int id)
         {
-            return _context.posts.Where(p => p.Post_ID == id).FirstOrDefault();
+            return _context.Posts.Where(p => p.Post_ID == id).FirstOrDefault();
         }
     }
 }

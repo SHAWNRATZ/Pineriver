@@ -9,7 +9,8 @@ namespace PineriverData
     public class PineriverContext : DbContext
     {
 
-        public DbSet<Post> posts { get; set; }
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<Server> Servers { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -20,6 +21,7 @@ namespace PineriverData
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Post>().HasKey(pk => pk.Post_ID);
+            modelBuilder.Entity<Server>().HasKey(pk => pk.Server_ID);
         }
 
     }

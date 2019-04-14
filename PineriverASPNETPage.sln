@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PineriverASPNETPage", "Pine
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{2FCDB163-714A-4F7C-858F-9DC0C09640C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PineriverData", "PineriverData\PineriverData.csproj", "{F8334A3C-1ABB-4D13-AB2F-9530F139F20D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PineriverData", "PineriverData\PineriverData.csproj", "{F8334A3C-1ABB-4D13-AB2F-9530F139F20D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSGOTEST", "CSGOTEST\CSGOTEST.csproj", "{9294656A-EEE3-4DC9-A1F6-6547E8F21406}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{F8334A3C-1ABB-4D13-AB2F-9530F139F20D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8334A3C-1ABB-4D13-AB2F-9530F139F20D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8334A3C-1ABB-4D13-AB2F-9530F139F20D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9294656A-EEE3-4DC9-A1F6-6547E8F21406}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9294656A-EEE3-4DC9-A1F6-6547E8F21406}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9294656A-EEE3-4DC9-A1F6-6547E8F21406}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9294656A-EEE3-4DC9-A1F6-6547E8F21406}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
