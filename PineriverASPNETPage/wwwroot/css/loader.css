@@ -25,7 +25,7 @@
 }
 
 .loader-inactive {
-    animation: FinishedLoad 2s forwards 1s;
+    animation: FinishedLoad 1s forwards 1s;
     
 }
 

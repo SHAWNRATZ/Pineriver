@@ -3,6 +3,6 @@ $(document).ready(function () {
     var int = setInterval(function () {
         document.querySelector("body").classList.toggle("loading");
         clearInterval(int);
-    }, 2500);
+    }, 1000);
     console.log("Loaded");
  });
